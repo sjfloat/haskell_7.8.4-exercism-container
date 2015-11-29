@@ -1,0 +1,10 @@
+#!/bin/sh
+
+eworkdir=`pwd`/exercism-work
+iworkdir=/home/dev/exercism
+
+if [ ! -d $eworkdir ]; then
+    mkdir $eworkdir
+fi
+
+docker run -it --name haskell_7.8.4-exercism -v $eworkdir:$iworkdir -w $iworkdir sjfloat/haskell_7.8.4-exercism
